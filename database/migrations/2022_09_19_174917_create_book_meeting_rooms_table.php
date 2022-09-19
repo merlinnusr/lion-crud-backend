@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('book_meeting_rooms', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('meeting_room_id');
+            $table->dateTime('meeting_date_start');
+            $table->dateTime('meeting_date_end');
             $table->timestamps();
         });
     }

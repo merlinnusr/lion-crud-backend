@@ -9,7 +9,8 @@ class BookMeetingRoom extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'meeting_date',
+        'meeting_date_start',
+        'meeting_date_end',
         'meeting_room_id',
     ];
 }

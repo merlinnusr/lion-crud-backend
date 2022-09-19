@@ -24,8 +24,9 @@ class UpdateBookMeetingRoomRequest extends FormRequest
     public function rules()
     {
         return [
-            'date_time' => 'required',
-            'meeting_room_id' => 'required|exists:meeting_room,id',
+            'meeting_date_start' => 'required',
+            'meeting_date_end' => 'required',
+            'meeting_room_id' => 'required|exists:meeting_rooms,id',
         ];
     }
 }
