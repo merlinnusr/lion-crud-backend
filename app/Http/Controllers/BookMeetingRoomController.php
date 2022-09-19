@@ -9,54 +9,12 @@ use App\Http\Requests\UpdateBookMeetingRoomRequest;
 class BookMeetingRoomController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \App\Http\Requests\StoreBookMeetingRoomRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBookMeetingRoomRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\BookMeetingRoom  $bookMeetingRoom
-     * @return \Illuminate\Http\Response
-     */
-    public function show(BookMeetingRoom $bookMeetingRoom)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\BookMeetingRoom  $bookMeetingRoom
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(BookMeetingRoom $bookMeetingRoom)
+    public function book(StoreBookMeetingRoomRequest $request)
     {
         //
     }
@@ -68,7 +26,7 @@ class BookMeetingRoomController extends Controller
      * @param  \App\Models\BookMeetingRoom  $bookMeetingRoom
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBookMeetingRoomRequest $request, BookMeetingRoom $bookMeetingRoom)
+    public function change(UpdateBookMeetingRoomRequest $request, BookMeetingRoom $bookMeetingRoom)
     {
         //
     }
@@ -79,7 +37,7 @@ class BookMeetingRoomController extends Controller
      * @param  \App\Models\BookMeetingRoom  $bookMeetingRoom
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BookMeetingRoom $bookMeetingRoom)
+    public function delete(BookMeetingRoom $bookMeetingRoom)
     {
         //
     }

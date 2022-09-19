@@ -13,7 +13,7 @@ class StoreBookMeetingRoomRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class StoreBookMeetingRoomRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'date_time' => 'required',
+            'meeting_room_id' => 'required|exists:meeting_room,id',
         ];
     }
 }

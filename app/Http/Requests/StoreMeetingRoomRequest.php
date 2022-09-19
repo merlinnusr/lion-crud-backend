@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateBookMeetingRoomRequest extends FormRequest
+class StoreMeetingRoomRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,7 @@ class UpdateBookMeetingRoomRequest extends FormRequest
     public function rules()
     {
         return [
-            'date_time' => 'required',
-            'meeting_room_id' => 'required|exists:meeting_room,id',
+            'name' => 'required'
         ];
     }
 }
