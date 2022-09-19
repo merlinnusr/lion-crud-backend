@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\MeetingRoom;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class BookMeetingRoomFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'meeting_date' => now(),
+            'meeting_room_id' => MeetingRoom::first()->id
         ];
     }
 }
