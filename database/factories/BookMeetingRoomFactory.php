@@ -18,7 +18,8 @@ class BookMeetingRoomFactory extends Factory
     public function definition()
     {
         return [
-            'meeting_date' => now(),
+            'meeting_date_start' => now(),
+            'meeting_date_end' => now()->addHours(2),
             'meeting_room_id' => MeetingRoom::first()->id
         ];
     }

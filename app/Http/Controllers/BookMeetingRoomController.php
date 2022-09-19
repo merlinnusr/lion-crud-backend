@@ -16,7 +16,8 @@ class BookMeetingRoomController extends Controller
      */
     public function book(StoreBookMeetingRoomRequest $request)
     {
-        //
+        $data = $request->validated();
+        BookMeetingRoom::whereDate('meeting_date', '>=',$data['meeting_date']);
     }
 
     /**
