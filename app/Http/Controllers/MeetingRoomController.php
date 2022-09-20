@@ -16,7 +16,7 @@ class MeetingRoomController extends Controller
      */
     public function index()
     {
-        return response()->json(['meeting_rooms' => MeetingRoom::all()]);
+        return ok('',['meeting_rooms' => MeetingRoom::all()]);
     }
 
     /**
@@ -28,7 +28,7 @@ class MeetingRoomController extends Controller
     public function store(StoreMeetingRoomRequest $request)
     {
         $data = $request->validated();
-        return response()->json(
+        return ok('',
             ['meeting_room' => MeetingRoom::create($data)
         ]);
         
@@ -40,10 +40,10 @@ class MeetingRoomController extends Controller
      * @param  \App\Models\BookMeetingRoom  $bookMeetingRoom
      * @return \Illuminate\Http\Response
      */
-    public function show(BookMeetingRoom $bookMeetingRoom)
+    public function show(MeetingRoom $meetingRoom)
     {
         return response()->json([
-            'meeting_room' => $bookMeetingRoom
+            'meeting_room' => $meetingRoom
         ]);
     }
 
@@ -54,11 +54,11 @@ class MeetingRoomController extends Controller
      * @param  \App\Models\BookMeetingRoom  $bookMeetingRoom
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMeetingRoomRequest $request, BookMeetingRoom $bookMeetingRoom)
+    public function update(UpdateMeetingRoomRequest $request, MeetingRoom $meetingRoom)
     {
         $data = $request->validated();
-        $updatedBookMeetingRoom = tap($bookMeetingRoom)->update($data);
-        return response()->json(
+        $updatedBookMeetingRoom = tap($meetingRoom)->update($data);
+        return ok('',
             ['meeting_room' => $updatedBookMeetingRoom]
         );
     }
@@ -69,10 +69,11 @@ class MeetingRoomController extends Controller
      * @param  \App\Models\BookMeetingRoom  $bookMeetingRoom
      * @return \Illuminate\Http\Response
      */
-    public function destroy(BookMeetingRoom $bookMeetingRoom)
+    public function destroy(MeetingRoom $meetingRoom)
     {
-        return response()->json(
-            ['meeting_room' => $bookMeetingRoom->delete()]
+        $book = $meetingRoom->delete();
+        return ok('',
+            ['meeting_room' => $book]
         );
     }
 }
