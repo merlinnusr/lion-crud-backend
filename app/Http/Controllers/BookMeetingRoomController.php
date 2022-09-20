@@ -9,6 +9,10 @@ use App\Services\BookMeetingRoomService;
 
 class BookMeetingRoomController extends Controller
 {
+    public function all()
+    {
+        return ok('',BookMeetingRoom::with('meeting_rooms')->get());
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -79,7 +83,7 @@ class BookMeetingRoomController extends Controller
             );
         }
         $updateBookMeetingRoom = tap($bookMeetingRoom)->update($data);
-        return ok('La reserservacion se actualizo', $updateBookMeetingRoom);
+        return ok('La reserservacion se actualizo', BookMeetingRoom::with('meeting_rooms')->find($bookMeetingRoom->id));
     }
 
     /**
@@ -90,6 +94,6 @@ class BookMeetingRoomController extends Controller
      */
     public function delete(BookMeetingRoom $bookMeetingRoom)
     {
-        return ok($bookMeetingRoom->delete());
+        return ok('Borrado correctamente',$bookMeetingRoom->delete());
     }
 }
