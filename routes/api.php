@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookMeetingRoomController;
+use App\Http\Controllers\MeetingRoomController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +20,9 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-
+Route::get('/meeting_room/book', [BookMeetingRoomController::class, 'all']);
 Route::post('/meeting_room/book', [BookMeetingRoomController::class, 'book']);
+Route::put('/meeting_room/book/{bookMeetingRoom}', [BookMeetingRoomController::class, 'change']);
+Route::delete('/meeting_room/book/{bookMeetingRoom}', [BookMeetingRoomController::class, 'delete']);
+
+Route::apiResource('meeting_room', MeetingRoomController::class);
